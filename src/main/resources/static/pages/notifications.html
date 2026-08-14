@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notification Center & Renewal Reminders - WarrantyWise">
+    <title>Notification Center — WarrantyWise</title>
+
+    <!-- Bootstrap 5 & Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- WarrantyWise Design System Styles -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div id="sidebar-backdrop" class="modal-backdrop fade show d-none" style="z-index: 1005;"></div>
+
+    <div id="app-wrapper">
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="app-sidebar" id="app-sidebar" aria-label="Main Navigation">
+            <div class="sidebar-header">
+                <a href="/pages/dashboard.html" class="sidebar-brand">
+                    <div class="sidebar-brand-icon">W</div>
+                    <span>WarrantyWise</span>
+                </a>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-section-label">Main Navigation</div>
+                <a href="/pages/dashboard.html" class="sidebar-nav-item">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/pages/products.html" class="sidebar-nav-item">
+                    <i class="bi bi-box-seam-fill"></i>
+                    <span>Products</span>
+                </a>
+                <a href="/pages/warranties.html" class="sidebar-nav-item">
+                    <i class="bi bi-shield-check"></i>
+                    <span>Warranties</span>
+                </a>
+                <a href="/pages/service-history.html" class="sidebar-nav-item">
+                    <i class="bi bi-tools"></i>
+                    <span>Service History</span>
+                </a>
+
+                <div class="sidebar-section-label">Insights & Tools</div>
+                <a href="/pages/reports.html" class="sidebar-nav-item">
+                    <i class="bi bi-bar-chart-line-fill"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="/pages/search.html" class="sidebar-nav-item">
+                    <i class="bi bi-search"></i>
+                    <span>Search</span>
+                </a>
+                <a href="/pages/notifications.html" class="sidebar-nav-item active" aria-current="page">
+                    <i class="bi bi-bell-fill"></i>
+                    <span>Notifications</span>
+                </a>
+
+                <div class="sidebar-section-label admin-only d-none">Management</div>
+                <a href="/pages/admin/users.html" class="sidebar-nav-item admin-only d-none">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Users</span>
+                </a>
+                <a href="/pages/categories.html" class="sidebar-nav-item admin-only d-none">
+                    <i class="bi bi-folder-fill"></i>
+                    <span>Categories</span>
+                </a>
+                <a href="/pages/admin/brands.html" class="sidebar-nav-item admin-only d-none">
+                    <i class="bi bi-tags-fill"></i>
+                    <span>Brands</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-summary">
+                    <div class="user-avatar" id="user-avatar-text">U</div>
+                    <div class="overflow-hidden">
+                        <div class="fw-semibold text-truncate text-white fs-6" id="user-display-name">User Account</div>
+                        <div class="small text-muted-custom" id="user-display-role">Standard User</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT CONTAINER -->
+        <div id="main-content">
+            <!-- TOP HEADER BAR -->
+            <header class="app-header">
+                <div class="d-flex align-items-center gap-3">
+                    <button type="button" class="btn-icon" id="sidebar-toggle-btn" aria-label="Toggle Sidebar Navigation">
+                        <i class="bi bi-list fs-4"></i>
+                    </button>
+                    <div class="header-search d-none d-md-block">
+                        <i class="bi bi-search header-search-icon"></i>
+                        <input type="text" class="form-control" placeholder="Search..." id="global-search-input">
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button type="button" class="btn-icon" id="theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-fill fs-5"></i></button>
+                    <a href="/pages/notifications.html" class="btn-icon text-decoration-none"><i class="bi bi-bell fs-5"></i><span class="notification-badge d-none" id="notification-badge-count">0</span></a>
+                    <div class="dropdown">
+                        <button class="btn btn-icon dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="bi bi-person-circle fs-5"></i></button>
+                        <ul class="dropdown-menu dropdown-menu-end bg-card-custom shadow-lg">
+                            <li><a class="dropdown-item" href="/pages/profile.html"><i class="bi bi-person me-2"></i> Profile & Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#" id="logout-btn"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <!-- BREADCRUMB BAR -->
+            <div class="breadcrumb-bar">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-custom">
+                        <li class="breadcrumb-item"><a href="/pages/dashboard.html"><i class="bi bi-house-door me-1"></i> Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Notifications</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- PAGE CONTENT BODY -->
+            <main class="page-container" id="page-container">
+                <!-- Page Header & Action -->
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4">
+                    <div>
+                        <h2 class="fw-bold mb-1">Notification & Reminder Center</h2>
+                        <p class="text-muted-custom mb-0">Stay informed about upcoming warranty expirations, service due dates, and system updates</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <button type="button" class="btn btn-outline-secondary" id="mark-all-read-btn">
+                            <i class="bi bi-check-all me-1"></i> Mark All as Read
+                        </button>
+                        <button type="button" class="btn btn-primary" id="generate-reminders-btn">
+                            <i class="bi bi-arrow-repeat me-1"></i> Refresh Reminders
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tabs & Filters Bar -->
+                <div class="card-custom p-3 mb-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                        <ul class="nav nav-pills" id="notification-tabs">
+                            <li class="nav-item">
+                                <button class="nav-link active" data-tab="all">All Notifications</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-tab="unread">Unread</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-tab="today-reminders">Today's Reminders</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-tab="upcoming-reminders">Upcoming Reminders</button>
+                            </li>
+                        </ul>
+
+                        <div style="min-width: 200px;">
+                            <select class="form-select" id="notification-category-filter">
+                                <option value="">All Categories</option>
+                                <option value="WARRANTY_EXPIRY">WARRANTY_EXPIRY</option>
+                                <option value="SERVICE_DUE">SERVICE_DUE</option>
+                                <option value="SYSTEM">SYSTEM</option>
+                                <option value="INFO">INFO</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skeleton Loader -->
+                <div id="notifications-skeleton" class="d-flex flex-column gap-3 d-none">
+                    <div class="card-custom p-4"><div class="skeleton skeleton-title mb-2"></div><div class="skeleton skeleton-text"></div></div>
+                    <div class="card-custom p-4"><div class="skeleton skeleton-title mb-2"></div><div class="skeleton skeleton-text"></div></div>
+                </div>
+
+                <!-- Error Container -->
+                <div id="notifications-error" class="card-custom text-center p-5 d-none">
+                    <i class="bi bi-exclamation-octagon text-danger fs-1 mb-3"></i>
+                    <h4 class="fw-bold mb-2">Unable to Load Notifications</h4>
+                    <p class="text-muted-custom mb-4" id="notifications-error-msg">Could not retrieve notification updates.</p>
+                    <button type="button" class="btn btn-primary" id="retry-notifications-btn">Retry</button>
+                </div>
+
+                <!-- Notification Cards Container -->
+                <div id="notifications-list" class="d-flex flex-column gap-3">
+                    <!-- Dynamic Notification Cards -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="notifications-empty" class="card-custom d-none">
+                    <div class="empty-state">
+                        <div class="empty-state-icon"><i class="bi bi-bell-slash"></i></div>
+                        <div class="empty-state-title">No Notifications</div>
+                        <div class="empty-state-text">You have no unread alerts or scheduled reminders right now.</div>
+                    </div>
+                </div>
+
+                <!-- Pagination Container -->
+                <div class="d-flex justify-content-between align-items-center mt-4" id="notifications-pagination-container">
+                    <div class="small text-muted-custom" id="notification-pagination-info">Showing 0 of 0 notifications</div>
+                    <ul class="pagination pagination-sm mb-0" id="notifications-pagination">
+                        <!-- Dynamic Page Buttons -->
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/auth-util.js"></script>
+    <script src="/js/theme-util.js"></script>
+    <script src="/js/ui-components.js"></script>
+    <script src="/js/api-client.js"></script>
+    <script src="/js/app-shell.js"></script>
+    <script src="/js/notifications.js"></script>
+</body>
+</html>

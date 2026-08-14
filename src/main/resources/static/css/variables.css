@@ -1,0 +1,202 @@
+/* ==========================================================================
+   WarrantyWise Design Tokens & Color System
+   Premium SaaS Design System · Version 3.0 (Selective Glassmorphism & Animations)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Font Family */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Color Palette - Slate Scale */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  /* Primary Brand - Indigo */
+  --primary-50: #eef2ff;
+  --primary-100: #e0e7ff;
+  --primary-200: #c7d2fe;
+  --primary-300: #a5b4fc;
+  --primary-400: #818cf8;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-700: #4338ca;
+  --primary-800: #3730a3;
+  --primary-900: #312e81;
+
+  /* Accent Gradients */
+  --grad-primary: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --grad-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --grad-warning: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --grad-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --grad-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
+
+  /* Selective Glassmorphism Tokens */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-bg-hover: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(226, 232, 240, 0.8);
+  --glass-blur: blur(12px);
+  --glass-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.06);
+
+  /* Status & Semantic Colors */
+  --color-success: #10b981;
+  --color-success-bg: #ecfdf5;
+  --color-success-text: #065f46;
+  --color-success-border: #a7f3d0;
+
+  --color-warning: #f59e0b;
+  --color-warning-bg: #fffbe6;
+  --color-warning-text: #92400e;
+  --color-warning-border: #fde68a;
+
+  --color-danger: #ef4444;
+  --color-danger-bg: #fef2f2;
+  --color-danger-text: #991b1b;
+  --color-danger-border: #fecaca;
+
+  --color-info: #06b6d4;
+  --color-info-bg: #ecfeff;
+  --color-info-text: #155e75;
+  --color-info-border: #a5f3fc;
+
+  /* Spacing Grid (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* Border Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Multi-layered Elevation Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+
+  /* Precise Animation System Timings */
+  --anim-micro: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --anim-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --anim-emphasis: 320ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout Specifications */
+  --header-height: 64px;
+  --breadcrumb-height: 40px;
+  --sidebar-width-expanded: 260px;
+  --sidebar-width-collapsed: 72px;
+
+  /* LIGHT MODE THEME VARIABLES (Default) */
+  --bg-app: var(--slate-50);
+  --bg-card: #ffffff;
+  --bg-card-highlight: #f8fafc;
+  --bg-secondary: var(--slate-100);
+  --bg-input: #ffffff;
+
+  --text-main: var(--slate-900);
+  --text-muted: var(--slate-500);
+  --text-subtle: var(--slate-400);
+
+  --border-color: var(--slate-200);
+  --border-color-hover: var(--slate-300);
+
+  --sidebar-bg: var(--slate-900);
+  --sidebar-text: var(--slate-300);
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.06);
+  --sidebar-active-bg: rgba(99, 102, 241, 0.16);
+  --sidebar-active-text: #ffffff;
+
+  --header-bg: rgba(255, 255, 255, 0.82);
+  --header-border: var(--slate-200);
+
+  --table-header-bg: var(--slate-100);
+  --table-row-hover: var(--slate-50);
+  --table-stripe: #fafafa;
+}
+
+/* DARK MODE THEME OVERRIDES */
+[data-bs-theme="dark"] {
+  --bg-app: #090d16;
+  --bg-card: #0f172a;
+  --bg-card-highlight: #1e293b;
+  --bg-secondary: #1e293b;
+  --bg-input: #1e293b;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+
+  --border-color: #1e293b;
+  --border-color-hover: #334155;
+
+  --sidebar-bg: #020617;
+  --sidebar-text: #94a3b8;
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.05);
+  --sidebar-active-bg: rgba(99, 102, 241, 0.25);
+  --sidebar-active-text: #ffffff;
+
+  --header-bg: rgba(15, 23, 42, 0.82);
+  --header-border: #1e293b;
+
+  --glass-bg: rgba(15, 23, 42, 0.75);
+  --glass-bg-hover: rgba(30, 41, 59, 0.85);
+  --glass-border: rgba(51, 65, 85, 0.8);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  --table-header-bg: #1e293b;
+  --table-row-hover: rgba(255, 255, 255, 0.02);
+  --table-stripe: rgba(255, 255, 255, 0.01);
+
+  --color-success-bg: rgba(16, 185, 129, 0.15);
+  --color-success-text: #34d399;
+  --color-success-border: rgba(16, 185, 129, 0.3);
+
+  --color-warning-bg: rgba(245, 158, 11, 0.15);
+  --color-warning-text: #fbbf24;
+  --color-warning-border: rgba(245, 158, 11, 0.3);
+
+  --color-danger-bg: rgba(239, 68, 68, 0.15);
+  --color-danger-text: #f87171;
+  --color-danger-border: rgba(239, 68, 68, 0.3);
+
+  --color-info-bg: rgba(6, 182, 212, 0.15);
+  --color-info-text: #22d3ee;
+  --color-info-border: rgba(6, 182, 212, 0.3);
+}
+
+/* Reduced Motion Accessibility Override */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --anim-micro: 0ms !important;
+    --anim-normal: 0ms !important;
+    --anim-emphasis: 0ms !important;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

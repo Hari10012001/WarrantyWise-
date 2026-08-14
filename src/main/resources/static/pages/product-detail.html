@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Profile Details - WarrantyWise">
+    <title>Product Details — WarrantyWise</title>
+
+    <!-- Bootstrap 5 & Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- WarrantyWise Design System Styles -->
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div id="sidebar-backdrop" class="modal-backdrop fade show d-none" style="z-index: 1005;"></div>
+
+    <div id="app-wrapper">
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="app-sidebar" id="app-sidebar" aria-label="Main Navigation">
+            <div class="sidebar-header">
+                <a href="/pages/dashboard.html" class="sidebar-brand">
+                    <div class="sidebar-brand-icon">W</div>
+                    <span>WarrantyWise</span>
+                </a>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-section-label">Main Navigation</div>
+                <a href="/pages/dashboard.html" class="sidebar-nav-item">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/pages/products.html" class="sidebar-nav-item active" aria-current="page">
+                    <i class="bi bi-box-seam-fill"></i>
+                    <span>Products</span>
+                </a>
+                <a href="/pages/warranties.html" class="sidebar-nav-item">
+                    <i class="bi bi-shield-check"></i>
+                    <span>Warranties</span>
+                </a>
+                <a href="/pages/service-history.html" class="sidebar-nav-item">
+                    <i class="bi bi-tools"></i>
+                    <span>Service History</span>
+                </a>
+
+                <div class="sidebar-section-label">Insights & Tools</div>
+                <a href="/pages/reports.html" class="sidebar-nav-item">
+                    <i class="bi bi-bar-chart-line-fill"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="/pages/search.html" class="sidebar-nav-item">
+                    <i class="bi bi-search"></i>
+                    <span>Search</span>
+                </a>
+                <a href="/pages/notifications.html" class="sidebar-nav-item">
+                    <i class="bi bi-bell-fill"></i>
+                    <span>Notifications</span>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-summary">
+                    <div class="user-avatar" id="user-avatar-text">U</div>
+                    <div class="overflow-hidden">
+                        <div class="fw-semibold text-truncate text-white fs-6" id="user-display-name">User Account</div>
+                        <div class="small text-muted-custom" id="user-display-role">Standard User</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT CONTAINER -->
+        <div id="main-content">
+            <!-- TOP HEADER BAR -->
+            <header class="app-header">
+                <div class="d-flex align-items-center gap-3">
+                    <button type="button" class="btn-icon" id="sidebar-toggle-btn" aria-label="Toggle Sidebar Navigation">
+                        <i class="bi bi-list fs-4"></i>
+                    </button>
+                    <div class="header-search d-none d-md-block">
+                        <i class="bi bi-search header-search-icon"></i>
+                        <input type="text" class="form-control" placeholder="Search products..." id="global-search-input">
+                    </div>
+                </div>
+
+                <div class="header-actions">
+                    <button type="button" class="btn-icon" id="theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-fill fs-5"></i></button>
+                    <a href="/pages/notifications.html" class="btn-icon text-decoration-none"><i class="bi bi-bell fs-5"></i><span class="notification-badge d-none" id="notification-badge-count">0</span></a>
+                    <div class="dropdown">
+                        <button class="btn btn-icon dropdown-toggle" type="button" data-bs-toggle="dropdown"><i class="bi bi-person-circle fs-5"></i></button>
+                        <ul class="dropdown-menu dropdown-menu-end bg-card-custom shadow-lg">
+                            <li><a class="dropdown-item" href="/pages/profile.html"><i class="bi bi-person me-2"></i> Profile & Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#" id="logout-btn"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <!-- BREADCRUMB BAR -->
+            <div class="breadcrumb-bar">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-custom">
+                        <li class="breadcrumb-item"><a href="/pages/dashboard.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/pages/products.html">Products</a></li>
+                        <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-product-name">Product Details</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <!-- PAGE CONTENT BODY -->
+            <main class="page-container" id="page-container">
+                <!-- Loading Skeleton -->
+                <div id="product-detail-skeleton" class="card-custom p-5 mb-4">
+                    <div class="skeleton skeleton-title mb-3"></div>
+                    <div class="skeleton skeleton-text mb-2"></div>
+                    <div class="skeleton skeleton-text mb-2" style="width: 70%;"></div>
+                </div>
+
+                <!-- Product Detail Body -->
+                <div id="product-detail-content" class="d-none">
+                    <!-- Detail Header Banner -->
+                    <div class="card-custom p-4 mb-4">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="d-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-3" style="width: 56px; height: 56px;">
+                                    <i class="bi bi-box-seam fs-2"></i>
+                                </div>
+                                <div>
+                                    <h3 class="fw-bold mb-1" id="detail-product-name">Product Name</h3>
+                                    <div class="text-muted-custom small">
+                                        <span id="detail-brand-name">Brand</span> &bull; 
+                                        <span id="detail-category-name">Category</span> &bull; 
+                                        Purchased <span id="detail-purchase-date">N/A</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <a href="#" id="edit-product-btn" class="btn btn-outline-secondary">
+                                    <i class="bi bi-pencil me-1"></i> Edit
+                                </a>
+                                <button type="button" id="delete-product-btn" class="btn btn-outline-danger">
+                                    <i class="bi bi-trash me-1"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROFILE TAB NAVIGATION -->
+                    <ul class="nav nav-tabs border-bottom mb-4" id="product-detail-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active fw-semibold" id="tab-overview" data-bs-toggle="tab" href="#content-overview" role="tab"><i class="bi bi-info-circle me-2"></i> Overview</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" id="tab-warranty" data-bs-toggle="tab" href="#content-warranty" role="tab"><i class="bi bi-shield-check me-2"></i> Warranty</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" id="tab-service" data-bs-toggle="tab" href="#content-service" role="tab"><i class="bi bi-tools me-2"></i> Service History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" id="tab-documents" data-bs-toggle="tab" href="#content-documents" role="tab"><i class="bi bi-file-earmark-arrow-up me-2"></i> Documents</a>
+                        </li>
+                    </ul>
+
+                    <!-- TAB CONTENT PANELS -->
+                    <div class="tab-content" id="product-tab-content">
+                        <!-- TAB 1: OVERVIEW -->
+                        <div class="tab-pane fade show active" id="content-overview" role="tabpanel">
+                            <div class="row g-4 mb-4">
+                                <div class="col-12 col-md-6">
+                                    <div class="card-custom p-4 h-100">
+                                        <h5 class="fw-bold mb-3 border-bottom pb-2"><i class="bi bi-info-circle text-primary me-2"></i> Technical Specifications</h5>
+                                        <div class="row g-3">
+                                            <div class="col-6"><div class="text-muted-custom small">Model Name</div><div class="fw-semibold" id="detail-model-name">-</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">Model Number</div><div class="fw-semibold" id="detail-model-number">-</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">Serial Number</div><div class="fw-semibold" id="detail-serial-number">-</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">IMEI / Asset ID</div><div class="fw-semibold" id="detail-imei-number">-</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">Color</div><div class="fw-semibold" id="detail-color">-</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">Barcode</div><div class="fw-semibold" id="detail-barcode">-</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="card-custom p-4 h-100">
+                                        <h5 class="fw-bold mb-3 border-bottom pb-2"><i class="bi bi-receipt text-success me-2"></i> Purchase Details</h5>
+                                        <div class="row g-3">
+                                            <div class="col-6"><div class="text-muted-custom small">Purchase Price</div><div class="fw-bold text-success fs-5" id="detail-purchase-price">₹0</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">Purchase Mode</div><div class="fw-semibold" id="detail-purchase-mode">-</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">Retailer / Store</div><div class="fw-semibold" id="detail-retailer">-</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">Invoice Number</div><div class="fw-semibold" id="detail-invoice-number">-</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">Status</div><div id="detail-status-badge">-</div></div>
+                                            <div class="col-6"><div class="text-muted-custom small">Condition</div><div id="detail-condition-badge">-</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 2: WARRANTY -->
+                        <div class="tab-pane fade" id="content-warranty" role="tabpanel">
+                            <div class="card-custom p-4 mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="fw-bold mb-0"><i class="bi bi-shield-check text-success me-2"></i> Associated Warranty Policies</h5>
+                                    <a href="/pages/add-warranty.html" class="btn btn-sm btn-primary"><i class="bi bi-plus-lg me-1"></i> Add Policy</a>
+                                </div>
+                                <div id="product-warranties-list">
+                                    <!-- Dynamic Warranties -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 3: SERVICE -->
+                        <div class="tab-pane fade" id="content-service" role="tabpanel">
+                            <div class="card-custom p-4 mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h5 class="fw-bold mb-0"><i class="bi bi-tools text-info me-2"></i> Service & Maintenance Records</h5>
+                                    <a href="/pages/add-service-record.html" class="btn btn-sm btn-primary"><i class="bi bi-plus-lg me-1"></i> Log Service</a>
+                                </div>
+                                <div id="product-services-list">
+                                    <!-- Dynamic Services -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TAB 4: DOCUMENTS (DRAG & DROP UX) -->
+                        <div class="tab-pane fade" id="content-documents" role="tabpanel">
+                            <!-- Drag and Drop Dropzone Card -->
+                            <div class="card-custom p-4 mb-4">
+                                <h5 class="fw-bold mb-3"><i class="bi bi-cloud-arrow-up text-primary me-2"></i> Upload Receipt or Document</h5>
+                                <div class="dropzone-custom" id="document-dropzone">
+                                    <i class="bi bi-file-earmark-arrow-up text-primary fs-1 mb-2"></i>
+                                    <h6 class="fw-bold text-main mb-1">Drag and drop invoice or receipt here</h6>
+                                    <p class="text-muted-custom small mb-3">Supports JPG, PNG, PDF files up to 5MB</p>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Browse File</button>
+                                </div>
+                                <input type="file" id="attachment-file-input" class="d-none" accept=".jpg,.jpeg,.png,.pdf">
+                            </div>
+
+                            <div class="card-custom p-4">
+                                <h5 class="fw-bold mb-3"><i class="bi bi-files text-secondary me-2"></i> Uploaded Documents</h5>
+                                <div id="attachments-list" class="row g-3">
+                                    <!-- Dynamic Attachment Cards -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/auth-util.js"></script>
+    <script src="/js/theme-util.js"></script>
+    <script src="/js/ui-components.js"></script>
+    <script src="/js/api-client.js"></script>
+    <script src="/js/app-shell.js"></script>
+    <script src="/js/products.js"></script>
+</body>
+</html>
