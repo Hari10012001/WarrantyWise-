@@ -38,12 +38,14 @@ When presenting the project, use the following dummy data to populate the fields
 
 ### 3. Add Warranty
 - **Product:** MacBook Pro M3
-- **Provider:** Apple Care+
-- **Warranty Type:** Extended Warranty
+- **Warranty Type:** Manufacturer
+- **Provider Name:** Apple Care+
+- **Policy Number:** POL-9876543
 - **Start Date:** 01-Jan-2024
 - **End Date:** 31-Dec-2026
-- **Status:** Active
-
+- **Policy Status:** ACTIVE
+- **Coverage Details:** Covers accidental damage, battery replacement, and hardware failures.
+- **Terms & Conditions:** Subject to standard Apple Care+ terms. Liquid damage may incur a service fee.
 ### 4. Add Service Record
 - **Product:** MacBook Pro M3
 - **Service Date:** 15-May-2024

@@ -141,13 +141,15 @@ Project-a staff kitta kaatum podhu indha exact details-a use panni fill pannunga
 * **Notes:** `Bought for Final Year Project`
 
 ### 🛡️ 3. Add Warranty
-* **Product:** `MacBook Pro M3` select pannunga.
-* **Provider:** `Apple Care+`
-* **Warranty Type:** `Extended Warranty`
+* **Select Product:** `MacBook Pro M3`
+* **Warranty Type:** `Manufacturer`
+* **Provider Name:** `Apple Care+`
+* **Policy Number:** `POL-9876543`
 * **Start Date:** `01-Jan-2024`
 * **End Date:** `31-Dec-2026`
-* **Status:** `Active`
-
+* **Policy Status:** `ACTIVE`
+* **Coverage Details:** `Covers accidental damage, battery replacement, and hardware failures.`
+* **Terms & Conditions:** `Subject to standard Apple Care+ terms. Liquid damage may incur a service fee.`
 ### 🔧 4. Add Service Record
 * **Product:** `MacBook Pro M3`
 * **Service Date:** `15-May-2024`
