@@ -111,32 +111,52 @@ mvn clean package
 
 ## 📝 7. Demo Script (Perfect Dummy Data for Presentation)
 
-Project-a staff kitta kaatum podhu indha exact details-a use panni fill pannunga. Dashboard graphs automatically super-ah populate aagidum, and ellam states (Active, Expiring Soon, Expired) cover aagum!
+Project-a staff kitta kaatum podhu indha exact details-a copy-paste panni fill pannunga. Dashboard graphs automatically super-ah populate aagidum, and ellam states (Active, Expiring Soon, Expired) cover aagum! Idhu table format-la irukku, so copy panna easy-ah irukkum.
 
-### 🟢 1. Gadget 1 (Expiring Soon - Needs Attention)
-* **Product:** `MacBook Pro M3` (Category: Electronics) | Price: `150000` | Date: `15-Sep-2025`
-* **Warranty:** `Apple Care+` | Start: `15-Sep-2025` | End: `15-Sep-2026` | Status: `ACTIVE` (Will show as Expiring Soon based on current date)
-* **Service Record:** `Keyboard replaced` | Cost: `0` (Under Warranty) | Status: `COMPLETED`
+### 📦 1. Products (First Add These)
+| Product Name | Category | Purchase Price | Purchase Date | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| `MacBook Pro M3` | Electronics | `150000` | `15-Sep-2025` | Needs Attention / Expiring Soon |
+| `Samsung Galaxy S24 Ultra` | Electronics | `129999` | `15-May-2024` | Expired / Out of Coverage |
+| `LG 8kg Front Load Washing Machine` | Home Appliances | `35000` | `10-Jan-2026` | Active / Safe |
+| `Royal Enfield Classic 350` | Vehicles | `240000` | `05-Mar-2026` | Active / Long Term |
+| `Sony WH-1000XM5 Headphones` | Electronics | `29990` | `01-Aug-2026` | Active (No service history) |
 
-### 🔴 2. Gadget 2 (Expired - Out of Coverage)
-* **Product:** `Samsung Galaxy S24 Ultra` (Category: Electronics) | Price: `129999` | Date: `15-May-2024`
-* **Warranty:** `Samsung India Electronics` | Start: `15-May-2024` | End: `15-May-2025` | Status: `EXPIRED`
-* **Service Record:** `Screen Replacement` | Service Type: `Repair` | Cost: `15000` | Status: `COMPLETED` | Work Performed: `Replaced display and flashed OS`
+### 🛡️ 2. Warranties (Link to the Products above)
+| Select Product | Warranty Provider | Start Date | End Date | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| MacBook Pro M3 | `Apple Care+` | `15-Sep-2025` | `15-Sep-2026` | ACTIVE |
+| Samsung Galaxy S24 Ultra | `Samsung India Electronics` | `15-May-2024` | `15-May-2025` | EXPIRED |
+| LG 8kg Front Load Washing Machine | `LG Extended Care` | `10-Jan-2026` | `10-Jan-2029` | ACTIVE |
+| Royal Enfield Classic 350 | `RE Sure` | `05-Mar-2026` | `05-Mar-2030` | ACTIVE |
+| Sony WH-1000XM5 Headphones | `Sony India Guarantee` | `01-Aug-2026` | `01-Aug-2027` | ACTIVE |
 
-### 🟢 3. Home Appliance (Active - Safe)
-* **Product:** `LG 8kg Front Load Washing Machine` (Category: Home Appliances) | Price: `35000` | Date: `10-Jan-2026`
-* **Warranty:** `LG Extended Care` | Start: `10-Jan-2026` | End: `10-Jan-2029` | Status: `ACTIVE`
-* **Service Record:** `Routine Drum Cleaning` | Cost: `500` | Status: `COMPLETED`
+### 🔧 3. Service Records (Link to the Products above)
+| Select Product | Service Name / Issue | Service Type | Cost | Status | Notes / Work Performed |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| MacBook Pro M3 | `Keyboard replaced` | Repair | `0` | COMPLETED | Under Warranty |
+| Samsung Galaxy S24 Ultra | `Screen Replacement` | Repair | `15000` | COMPLETED | Replaced display and flashed OS |
+| LG 8kg Front Load Washing Machine | `Routine Drum Cleaning` | Maintenance | `500` | COMPLETED | |
+| Royal Enfield Classic 350 | `First Free Service` | Maintenance | `800` | COMPLETED | Oil change |
+| *(Don't add for Sony Headphones to show empty state!)* | | | | | |
 
-### 🟢 4. Vehicle (Active - Long Term)
-* **Product:** `Royal Enfield Classic 350` (Category: Vehicles) | Price: `240000` | Date: `05-Mar-2026`
-* **Warranty:** `RE Sure` | Start: `05-Mar-2026` | End: `05-Mar-2030` | Status: `ACTIVE`
-* **Service Record:** `First Free Service` | Cost: `800` (Oil change) | Status: `COMPLETED`
+---
 
-### 🟢 5. Personal Audio (Active)
-* **Product:** `Sony WH-1000XM5 Headphones` (Category: Electronics) | Price: `29990` | Date: `01-Aug-2026`
-* **Warranty:** `Sony India Guarantee` | Start: `01-Aug-2026` | End: `01-Aug-2027` | Status: `ACTIVE`
-* **Service Record:** *(No service history yet - helps to show empty states!)*
+## 🔍 8. Eppadi Test Panradhu? (Pro Testing Tips)
+
+Project-a run panni paarkum podhu indha features-a kandippa test panni paarunga:
+
+1. **File Upload Testing (Invoices/Bills):**
+   * Products illa Warranty detail page-kku ponga. Anga "Attachments" section-la unga system-la irundhu edhavadhu dummy image (.jpg) illa PDF file-a upload pannunga.
+   * *Enna nadakkum?* Backend automatically `uploads` nu oru folder-a root directory-la create panni, andha file-a anga save pannidum. Database-la file-oda name mattum save aagum. Idhu oru super production-ready feature!
+
+2. **Global Search Engine (`Ctrl + K`):**
+   * Keyboard-la `Ctrl + K` press pannunga, search box open aagum.
+   * Anga "Samsung" illa "Keyboard" nu thedi paarunga. Namma API accurately products, warranties, and service records ellathaiyum thedi filter panni kondu varum.
+
+3. **Dashboard Real-time Metrics:**
+   * Mela ulla demo data-va add panni mudichadhum, Dashboard-kku vanga. 
+   * "Warranty Health", "Upcoming Expiries" graphs ellam data-kku yetha madhiri dynamically maruradha paarkalaam. Expiry date kitta vandha, red alert kaattum!
 
 ---
 
