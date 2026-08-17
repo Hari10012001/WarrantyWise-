@@ -53,22 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Fetch products, warranties, and services matching query
         try {
             const [productsRes, warrantiesRes, servicesRes] = await Promise.all([
-                ApiClient.get('/products/my-products', { search: query, size: 50 }).catch(() => ({ content: [] })),
+                ApiClient.get('/products/search', { search: query, size: 50 }).catch(() => ({ content: [] })),
                 ApiClient.get('/warranties/search', { search: query, size: 50 }).catch(() => ({ content: [] })),
-                ApiClient.get('/service-records', { size: 50 }).catch(() => ({ content: [] }))
+                ApiClient.get('/service-records/search', { search: query, size: 50 }).catch(() => ({ content: [] }))
             ]);
 
             const products = productsRes.content || [];
             const warranties = warrantiesRes.content || [];
             let services = servicesRes.content || [];
-
-            if (query && services.length > 0) {
-                services = services.filter(s => 
-                    (s.productName && s.productName.toLowerCase().includes(query.toLowerCase())) ||
-                    (s.serviceProvider && s.serviceProvider.toLowerCase().includes(query.toLowerCase())) ||
-                    (s.serviceType && s.serviceType.toLowerCase().includes(query.toLowerCase()))
-                );
-            }
 
             renderProducts(products);
             renderWarranties(warranties);
