@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('stat-service-cost').innerText = formatCurrency(serviceCost);
         document.getElementById('stat-service-records-count').innerText = `${serviceRecordsCount} Total Records`;
 
-        const coveragePercent = totalProducts > 0 ? Math.round((activeWarranties / totalProducts) * 100) : 0;
+        const coveragePercent = totalProducts > 0 ? Math.round((activeProducts / totalProducts) * 100) : 0;
         document.getElementById('stat-coverage-percent').innerText = `${coveragePercent}% Coverage`;
 
         // 2. WARRANTY HEALTH SCORE CALCULATOR
@@ -150,7 +150,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 let html = '<div class="timeline-custom">';
                 timelineList.forEach(item => {
                     const daysLeft = item.daysRemaining || 0;
-                    let badgeClass = daysLeft <= 7 ? 'badge-status-expired' : 'badge-status-expiring';
+                    let badgeClass = daysLeft <= 0 ? 'badge-status-expired' : (daysLeft <= 7 ? 'badge-status-expired' : 'badge-status-expiring');
+                    let badgeText = daysLeft < 0 ? 'EXPIRED' : (daysLeft === 0 ? 'TODAY' : `${daysLeft} DAYS LEFT`);
 
                     html += `
                         <div class="timeline-item">
@@ -160,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <div class="fw-semibold text-main">${escapeHtml(item.productName)}</div>
                                     <div class="small text-muted-custom">Provider: ${escapeHtml(item.provider || 'N/A')} &bull; Expiry: ${formatDate(item.endDate)}</div>
                                 </div>
-                                <span class="badge-status ${badgeClass}">${daysLeft} Days Left</span>
+                                <span class="badge-status ${badgeClass}">${badgeText}</span>
                             </div>
                         </div>
                     `;
