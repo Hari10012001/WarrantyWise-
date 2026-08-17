@@ -176,7 +176,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function renderDefaultState() {
-        executeSearch();
+        if (productsList) productsList.innerHTML = `<div class="col-12 text-center text-muted py-5"><i class="bi bi-search fs-1 mb-3 d-block"></i>Type above to search your inventory</div>`;
+        if (warrantiesList) warrantiesList.innerHTML = '';
+        if (servicesList) servicesList.innerHTML = '';
+        if (countProducts) countProducts.innerText = '0';
+        if (countWarranties) countWarranties.innerText = '0';
+        if (countServices) countServices.innerText = '0';
     }
 
     if (searchInput) {

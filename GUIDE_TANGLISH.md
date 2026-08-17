@@ -33,31 +33,28 @@ Project-a run panna terminal-la periya command Type panna thevai illai! Direct-a
 ## 📁 3. Professional Folder Structure (Project Organization)
 
 ```text
-WarrantyWise_Product Warranty, Service History and Renewal Reminder/
-├── 📄 start.bat               <-- 1-Click Server & Browser Launcher
-├── 📄 stop.bat                <-- 1-Click Graceful Shutdown Script
-├── 📁 bin/                    <-- Automation Execution Scripts
-│   ├── start.bat
-│   └── stop.bat
-├── 📄 pom.xml                 <-- Maven Dependencies (Java 21, Spring Boot 3.3.x)
-├── 📁 src/                    <-- Application Source Code
-│   ├── 📁 main/java/com/warrantywise/
-│   │   ├── config/            <-- Spring Security, CORS & JPA Config
-│   │   ├── controller/        <-- REST Controllers (/api/v1/*)
-│   │   ├── dto/               <-- Data Transfer Objects
-│   │   ├── entity/            <-- Database Entities (JPA)
-│   │   ├── repository/        <-- Spring Data JPA Repositories
-│   │   ├── security/          <-- JWT Authentication Provider & Filters
-│   │   └── service/           <-- Business Logic & Intelligence Engines
-│   └── 📁 main/resources/
-│       ├── application.properties <-- Database & JWT Configuration
-│       └── static/            <-- Modern Frontend (HTML, CSS, Vanilla JS)
-│           ├── index.html     <-- Root App Launcher & Router
-│           ├── 📁 css/        <-- Glassmorphism Design System (variables, global, components)
-│           ├── 📁 js/         <-- API Client, Auth, Command Palette, UI Engine
-│           └── 📁 pages/      <-- Dashboard, Products, Warranties, Services, Reports
-├── 📁 target/                 <-- Compiled JAR artifact (warrantywise-0.0.1-SNAPSHOT.jar)
-└── 📁 uploads/                <-- User uploaded invoices & documents
+WarrantyWise_Project/
+|-- start.bat               <-- 1-Click Server & Browser Launcher
+|-- stop.bat                <-- 1-Click Graceful Shutdown Script
+|-- pom.xml                 <-- Maven Dependencies (Java 21, Spring Boot)
+|-- src/                    <-- Application Source Code
+|   |-- main/java/com/warrantywise/
+|   |   |-- config/         <-- Spring Security, CORS & JPA Config
+|   |   |-- controller/     <-- REST Controllers (/api/v1/*)
+|   |   |-- dto/            <-- Data Transfer Objects
+|   |   |-- entity/         <-- Database Entities (JPA)
+|   |   |-- repository/     <-- Spring Data JPA Repositories
+|   |   |-- security/       <-- JWT Authentication Provider & Filters
+|   |   |-- service/        <-- Business Logic & Intelligence Engines
+|   |-- main/resources/
+|       |-- application.properties <-- Database & JWT Configuration
+|       |-- static/         <-- Modern Frontend (HTML, CSS, Vanilla JS)
+|           |-- index.html  <-- Root App Launcher & Router
+|           |-- css/        <-- Glassmorphism Design System
+|           |-- js/         <-- API Client, Auth, UI Engine
+|           |-- pages/      <-- Dashboard, Products, Warranties, Services
+|-- target/                 <-- Compiled JAR artifact
+|-- uploads/                <-- User uploaded invoices & documents
 ```
 
 ---
