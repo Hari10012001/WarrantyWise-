@@ -104,6 +104,9 @@
     color: #fff;
     border-radius: 12px;
     transition: all 0.3s ease;
+    padding-top: 1.625rem !important;
+    padding-bottom: 0.625rem !important;
+    height: calc(3.5rem + 2px) !important;
 }
 
 .form-floating > .form-control:focus {
@@ -118,10 +121,15 @@
     transition: all 0.2s ease;
 }
 
+/* Remove Bootstrap 5.3 default solid background for labels */
+.form-floating > label::after {
+    background: transparent !important;
+}
+
 .form-floating > .form-control:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label {
     color: #4facfe;
-    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    transform: scale(0.85) translateY(-0.8rem) translateX(0.15rem);
 }
 
 /* Fix for Webkit autofill in dark mode */
