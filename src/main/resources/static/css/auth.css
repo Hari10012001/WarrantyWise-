@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Authentication Pages UI (Glassmorphism & Animations)
+   ========================================================================== */
+
+/* Animated Gradient Background */
+.bg-auth {
+    background: linear-gradient(-45deg, #0a0f25, #1a1635, #0f1c3f, #231131);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Abstract Geometric Blobs */
+.shape-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.6;
+    animation: floatBlob 10s ease-in-out infinite alternate;
+}
+
+.shape-blob.one {
+    background: #5d3fd3;
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+}
+
+.shape-blob.two {
+    background: #00d2ff;
+    width: 250px;
+    height: 250px;
+    bottom: -50px;
+    right: -10px;
+    animation-delay: -5s;
+}
+
+.shape-blob.three {
+    background: #e23e57;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 20%;
+    opacity: 0.4;
+    animation-duration: 15s;
+}
+
+@keyframes floatBlob {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(30px) scale(1.1); }
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(25, 25, 45, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Auth Header */
+.auth-header-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+.auth-header-icon i {
+    font-size: 28px;
+    color: white;
+}
+
+/* Floating Labels Customization */
+.form-floating > .form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.form-floating > .form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #4facfe;
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.25);
+    color: #fff;
+}
+
+.form-floating > label {
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #4facfe;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+/* Fix for Webkit autofill in dark mode */
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover, 
+.form-control:-webkit-autofill:focus, 
+.form-control:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #1a1b3a inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Password Toggle Button */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    z-index: 5;
+    transition: color 0.2s;
+}
+
+.password-toggle:hover {
+    color: #fff;
+}
+
+/* Premium Auth Button */
+.btn-auth {
+    background: linear-gradient(135deg, #5d3fd3 0%, #8a2be2 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 14px 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(93, 63, 211, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-auth::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+.btn-auth:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(93, 63, 211, 0.6);
+    color: white;
+}
+
+.btn-auth:hover::before {
+    left: 100%;
+}
+
+.btn-auth:active {
+    transform: translateY(1px);
+}
+
+/* Auth Links */
+.auth-link {
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.auth-link:hover {
+    color: #00f2fe;
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+}
+
+/* Social Login Buttons */
+.btn-social {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.btn-social:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateY(-2px);
+}
