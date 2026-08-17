@@ -141,8 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // 4. UPCOMING EXPIRY TIMELINE
-        const timelineData = data.warrantyTimeline || {};
-        const timelineList = timelineData.expiringItems || [];
+        const timelineList = data.warrantyTimeline || [];
         const timelineContainer = document.getElementById('expiry-timeline-list');
         if (timelineContainer) {
             if (!timelineList || timelineList.length === 0) {

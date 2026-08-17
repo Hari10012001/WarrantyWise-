@@ -65,7 +65,7 @@ public class WarrantyIntelligenceServiceImpl implements WarrantyIntelligenceServ
         }
 
         long productsWithActiveWarranty = products.stream()
-                .filter(p -> warrantyRepository.findByProductId(p.getId()).stream().anyMatch(w -> w.getStatus() == WarrantyStatus.ACTIVE))
+                .filter(p -> warrantyRepository.findByProductId(p.getId()).stream().anyMatch(w -> w.getStatus() == WarrantyStatus.ACTIVE || w.getStatus() == WarrantyStatus.EXPIRING_SOON))
                 .count();
 
         double warrantyCoveragePercentage = totalProducts > 0 
