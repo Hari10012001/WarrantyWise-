@@ -112,4 +112,52 @@ mvn clean package
 
 ---
 
+## 📝 7. Demo Script (Perfect Dummy Data for Presentation)
+
+Project-a staff kitta kaatum podhu indha exact details-a use panni fill pannunga. Appodha form fields (Model Name, IMEI, Status ellam) correct-ah map aagi, dashboard semmaya look aagum!
+
+### 🟢 1. Register & Login
+* **Name:** `Hariharan P`
+* **Email:** `hari@demo.com`
+* **Password:** `Hari1234`
+
+### 💻 2. Add a Product (Laptop)
+* **Product Name:** `MacBook Pro M3`
+* **Category:** `Electronics`
+* **Brand:** `Apple`
+* **Model Name:** `M3 Max`
+* **Model Number:** `A2991`
+* **Serial Number:** `C02G123456`
+* **Color:** `Space Black`
+* **IMEI Number:** *(Leave Blank or Type N/A)*
+* **Barcode / UPC:** *(Leave Blank)*
+* **Purchase Date:** `01-Jan-2024`
+* **Purchase Price:** `150000`
+* **Purchase Mode:** `ONLINE`
+* **Store / Retailer Name:** `Apple Store, Chennai`
+* **Product Status:** `IN_USE`
+* **Condition:** `NEW`
+* **Storage Location:** `Home Office Desk`
+* **Notes:** `Bought for Final Year Project`
+
+### 🛡️ 3. Add Warranty
+* **Product:** `MacBook Pro M3` select pannunga.
+* **Provider:** `Apple Care+`
+* **Warranty Type:** `Extended Warranty`
+* **Start Date:** `01-Jan-2024`
+* **End Date:** `31-Dec-2026`
+* **Status:** `Active`
+
+### 🔧 4. Add Service Record
+* **Product:** `MacBook Pro M3`
+* **Service Date:** `15-May-2024`
+* **Service Center:** `iCare Authorized Service`
+* **Issue Description:** `Keyboard keys not working`
+* **Service Cost:** `0`
+* **Status:** `Completed`
+
+Idhe madhiri oru Mobile Phone & TV kkum (different dates vechi) add pannunga. Dashboard graphs automatically super-ah populate aagidum!
+
+---
+
 *Enjoy managing your product warranties effortlessly with WarrantyWise!* 🛡️✨
