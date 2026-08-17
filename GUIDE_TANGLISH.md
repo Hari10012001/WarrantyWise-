@@ -114,51 +114,32 @@ mvn clean package
 
 ## 📝 7. Demo Script (Perfect Dummy Data for Presentation)
 
-Project-a staff kitta kaatum podhu indha exact details-a use panni fill pannunga. Appodha form fields (Model Name, IMEI, Status ellam) correct-ah map aagi, dashboard semmaya look aagum!
+Project-a staff kitta kaatum podhu indha exact details-a use panni fill pannunga. Dashboard graphs automatically super-ah populate aagidum, and ellam states (Active, Expiring Soon, Expired) cover aagum!
 
-### 🟢 1. Register & Login
-* **Name:** `Hariharan P`
-* **Email:** `hari@demo.com`
-* **Password:** `Hari1234`
+### 🟢 1. Gadget 1 (Expiring Soon - Needs Attention)
+* **Product:** `MacBook Pro M3` (Category: Electronics) | Price: `150000` | Date: `15-Sep-2025`
+* **Warranty:** `Apple Care+` | Start: `15-Sep-2025` | End: `15-Sep-2026` | Status: `ACTIVE` (Will show as Expiring Soon based on current date)
+* **Service Record:** `Keyboard replaced` | Cost: `0` (Under Warranty) | Status: `COMPLETED`
 
-### 💻 2. Add a Product (Laptop)
-* **Product Name:** `MacBook Pro M3`
-* **Category:** `Electronics`
-* **Brand:** `Apple`
-* **Model Name:** `M3 Max`
-* **Model Number:** `A2991`
-* **Serial Number:** `C02G123456`
-* **Color:** `Space Black`
-* **IMEI Number:** *(Leave Blank or Type N/A)*
-* **Barcode / UPC:** *(Leave Blank)*
-* **Purchase Date:** `01-Jan-2024`
-* **Purchase Price:** `150000`
-* **Purchase Mode:** `ONLINE`
-* **Store / Retailer Name:** `Apple Store, Chennai`
-* **Product Status:** `IN_USE`
-* **Condition:** `NEW`
-* **Storage Location:** `Home Office Desk`
-* **Notes:** `Bought for Final Year Project`
+### 🔴 2. Gadget 2 (Expired - Out of Coverage)
+* **Product:** `Samsung Galaxy S24 Ultra` (Category: Electronics) | Price: `129999` | Date: `15-May-2024`
+* **Warranty:** `Samsung India Electronics` | Start: `15-May-2024` | End: `15-May-2025` | Status: `EXPIRED`
+* **Service Record:** `Screen Replacement` | Service Type: `Repair` | Cost: `15000` | Status: `COMPLETED` | Work Performed: `Replaced display and flashed OS`
 
-### 🛡️ 3. Add Warranty
-* **Select Product:** `MacBook Pro M3`
-* **Warranty Type:** `Manufacturer`
-* **Provider Name:** `Apple Care+`
-* **Policy Number:** `POL-9876543`
-* **Start Date:** `01-Jan-2024`
-* **End Date:** `31-Dec-2026`
-* **Policy Status:** `ACTIVE`
-* **Coverage Details:** `Covers accidental damage, battery replacement, and hardware failures.`
-* **Terms & Conditions:** `Subject to standard Apple Care+ terms. Liquid damage may incur a service fee.`
-### 🔧 4. Add Service Record
-* **Product:** `MacBook Pro M3`
-* **Service Date:** `15-May-2024`
-* **Service Center:** `iCare Authorized Service`
-* **Issue Description:** `Keyboard keys not working`
-* **Service Cost:** `0`
-* **Status:** `Completed`
+### 🟢 3. Home Appliance (Active - Safe)
+* **Product:** `LG 8kg Front Load Washing Machine` (Category: Home Appliances) | Price: `35000` | Date: `10-Jan-2026`
+* **Warranty:** `LG Extended Care` | Start: `10-Jan-2026` | End: `10-Jan-2029` | Status: `ACTIVE`
+* **Service Record:** `Routine Drum Cleaning` | Cost: `500` | Status: `COMPLETED`
 
-Idhe madhiri oru Mobile Phone & TV kkum (different dates vechi) add pannunga. Dashboard graphs automatically super-ah populate aagidum!
+### 🟢 4. Vehicle (Active - Long Term)
+* **Product:** `Royal Enfield Classic 350` (Category: Vehicles) | Price: `240000` | Date: `05-Mar-2026`
+* **Warranty:** `RE Sure` | Start: `05-Mar-2026` | End: `05-Mar-2030` | Status: `ACTIVE`
+* **Service Record:** `First Free Service` | Cost: `800` (Oil change) | Status: `COMPLETED`
+
+### 🟢 5. Personal Audio (Active)
+* **Product:** `Sony WH-1000XM5 Headphones` (Category: Electronics) | Price: `29990` | Date: `01-Aug-2026`
+* **Warranty:** `Sony India Guarantee` | Start: `01-Aug-2026` | End: `01-Aug-2027` | Status: `ACTIVE`
+* **Service Record:** *(No service history yet - helps to show empty states!)*
 
 ---
 
